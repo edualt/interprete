@@ -4,15 +4,19 @@ from expresiones import *
 from instrucciones import *
 
 def procesar_imprimir(instr, ts) :
-    print(resolver_cadena(instr.cad, ts))
+    a = resolver_cadena(instr.cad, ts)
+
+    print(a)
+
+
 
 def procesar_definicion(instr, ts) :
-    simbolo = TS.Simbolo(instr.id, TS.TIPO_DATO.NUMERO, 0)      # inicializamos con 0 como valor por defecto
+    simbolo = TS.Simbolo(instr.id, 0)      # inicializamos con 0 como valor por defecto
     ts.agregar(simbolo)
 
 def procesar_asignacion(instr, ts) :
     val = resolver_expresion_aritmetica(instr.expNumerica, ts)
-    simbolo = TS.Simbolo(instr.id, TS.TIPO_DATO.NUMERO, val)
+    simbolo = TS.Simbolo(instr.id, val)
     ts.actualizar(simbolo)
 
 def procesar_mientras(instr, ts) :
