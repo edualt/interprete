@@ -8,11 +8,11 @@
 print("Tablas de" & " multiplicar");
 
 //Se declara la variable a, de tipo numero
-numero a;
+a;
 //Se asigna a la variable a el valor 0
 a:=0;
 //Se declara la variable c, de tipo numero
-numero c;
+c;
 //Se asigna a la variable c el valor 0
 c:=1;
 //Se imprime un separador
@@ -25,7 +25,7 @@ print("----------------");
  **/
 while(a<4+c)do{	
 	a:=a+1;
-	numero b;
+	b;
 	b:=0;
 	while(b<4+c)do{
 		b:=b+1;
@@ -42,7 +42,7 @@ a:=11;
  * entonces no existe en este ámbito por lo que 
  * debe declararse.
  **/
-numero b;
+b;
 //Se asigna valor de 12 a b y valor de 13 a c
 b:=12;
 c:=13;
