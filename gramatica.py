@@ -1,11 +1,3 @@
-
-# -----------------------------------------------------------------------------
-# Rainman Sián
-# 26-02-2020
-#
-# Ejemplo interprete sencillo con Python utilizando ply en Ubuntu
-# -----------------------------------------------------------------------------
-
 reservadas = {
     'numero' : 'NUMERO',
     'print' : 'IMPRIMIR',
@@ -84,16 +76,6 @@ def t_CADENA(t):
     r'\".*?\"'
     t.value = t.value[1:-1] # remuevo las comillas
     return t 
-
-# Comentario de múltiples líneas /* .. */
-def t_COMENTARIO_MULTILINEA(t):
-    r'/\*(.|\n)*?\*/'
-    t.lexer.lineno += t.value.count('\n')
-
-# Comentario simple // ...
-def t_COMENTARIO_SIMPLE(t):
-    r'//.*\n'
-    t.lexer.lineno += 1
 
 # Caracteres ignorados
 t_ignore = " \t"
